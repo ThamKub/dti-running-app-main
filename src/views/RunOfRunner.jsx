@@ -12,7 +12,7 @@ function RunOfRunner() {
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
+            color="red"
             aria-label="menu"
             sx={{ mr: 2 }}
           >
@@ -21,7 +21,7 @@ function RunOfRunner() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="red">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
