@@ -1,6 +1,3 @@
-//ไฟล App.jsx เราจะใช้จัดการเส้นทางของเว็บ
-//rfce หรือ rfc
-
 import React from 'react'
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import LoginRunner from './views/LoginRunner.jsx'
@@ -10,10 +7,13 @@ import AddRunOfRunner from './views/AddRunOfRunner.jsx'
 import DelRunOfRunner from './views/DelRunOfRunner.jsx'
 import RunOfRunner from './views/RunOfRunner.jsx'
 import EditRunOfRunner from './views/EditRunOfRunner.jsx'
+import CssBaseline from '@mui/material/CssBaseline'
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
+      <CssBaseline/>
+      <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginRunner />} />
         <Route path="/runner/registerrunner" element={<RegisterRunner />} />
@@ -23,7 +23,8 @@ function App() {
         <Route path="/run/runofrunner" element={<RunOfRunner />} />
         <Route path="/run/editrunofrunner" element={<EditRunOfRunner />} />
       </Routes>
-    </BrowserRouter>     
+      </BrowserRouter>
+    </>     
   )
 }
 
