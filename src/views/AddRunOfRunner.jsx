@@ -6,7 +6,7 @@ import RunCircleIcon from '@mui/icons-material/RunCircle';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Person from './../assets/images/person.png';
-import run from './../assets/images/run.png'
+import run from './../assets/images/run.jpg'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { styled } from '@mui/material/styles';
 
@@ -74,7 +74,7 @@ function AddRunOfRunner() {
     //ส่งข้อมูลไปผ่าน API ที่กำหนดไว้ที่ Back-end
     try{
       //ส่งไปบันทึก
-      const response = await fetch('http://localhost:3030/run/', {
+      const response = await fetch('http://localhost:4444/run/', {
         method: 'POST',
         body: formData,       
         headers: {
@@ -115,7 +115,7 @@ function AddRunOfRunner() {
               {runnerName}
             </Typography>
             <Avatar alt="Runner"
-              src={runnerImage === '' ? Person : `http://localhost:3030/images/runner/${runnerImage}`}
+              src={runnerImage === '' ? Person : `http://localhost:4444/images/runner/${runnerImage}`}
               sx={{ width: 50, height: 50, ml: 2 }} />
             <Link to="/" style={{ textDecoration: 'none', color: 'green', marginLeft: '10px' }}>
               Logout

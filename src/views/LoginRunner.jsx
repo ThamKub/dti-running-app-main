@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Typography, Avatar, TextField, Button } from '@mui/material';
-import run from './../assets/images/run.png'
+import run from './../assets/images/run.jpg'
 import { Link } from 'react-router-dom' 
 import { useState } from 'react';
 
@@ -21,7 +21,7 @@ function LoginRunner() {
 
     //ส่งข้อมูลไปตรวจสอบ DB
     try{
-      const response = await fetch(`http://localhost:3030/runner/${runnerUsername}/${runnerPassword}`, {
+      const response = await fetch(`http://localhost:4444/runner/${runnerUsername}/${runnerPassword}`, {
         method: 'GET',
       })
 

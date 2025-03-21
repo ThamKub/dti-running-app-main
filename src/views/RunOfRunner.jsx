@@ -6,7 +6,7 @@ import RunCircleIcon from '@mui/icons-material/RunCircle';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Person from './../assets/images/person.png';
-import Run from './../assets/images/run.png'
+import Run from './../assets/images/run.jpg'
 
 
 function RunOfRunner() {
@@ -27,7 +27,7 @@ function RunOfRunner() {
     //ดึงข้อมูลการวิ่งของนักวิ่งจากฐานข้อมูล
     try {
       const getData = async () => {
-        const response = await fetch(`http://localhost:3030/run/${runner.runnerId}`, {
+        const response = await fetch(`http://localhost:4444/run/${runner.runnerId}`, {
           method: 'GET',
         })
 
@@ -49,7 +49,7 @@ function RunOfRunner() {
   const handleDeleteRun = async (runId) => {
     if (window.confirm('คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลการวิ่งนี้?')) {
       try {
-        const response = await fetch(`http://localhost:3030/run/${runId}`, {
+        const response = await fetch(`http://localhost:4444/run/${runId}`, {
           method: 'DELETE',
         })
 
@@ -82,7 +82,7 @@ function RunOfRunner() {
               <RunCircleIcon />
             </IconButton>
             <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-              Run of Runner by Ninnin DTI-SAU
+              Run of Runner by Tham DTI-SAU
             </Typography>
             <Link to='/runner/editrunner' style={{textDecoration: 'none', color: 'white'}}>
               <Typography variant="h6" >
@@ -90,7 +90,7 @@ function RunOfRunner() {
               </Typography>
             </Link>
             <Avatar alt="Runner"
-              src={runnerImage === '' ? Person : `http://localhost:3030/images/runner/${runnerImage}`}
+              src={runnerImage === '' ? Person : `http://localhost:4444/images/runner/${runnerImage}`}
               sx={{ width: 50, height: 50, ml: 2 }} />
             <Link to="/" style={{ textDecoration: 'none', color: 'green', marginLeft: '10px' }}>
               Logout
@@ -128,7 +128,7 @@ function RunOfRunner() {
                     <TableCell>{row.dateRun}</TableCell>
                     <TableCell>
                       <Avatar alt="Run"
-                        src={row.runImage === '' ? Run : `http://localhost:3030/images/run/${row.runImage}`}
+                        src={row.runImage === '' ? Run : `http://localhost:4444/images/run/${row.runImage}`}
                         sx={{ width: 80, height: 80, ml: 2 }} />
                     </TableCell>
                     <TableCell>{row.distanceRun}</TableCell>

@@ -6,7 +6,7 @@ import RunCircleIcon from '@mui/icons-material/RunCircle';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Person from './../assets/images/person.png';
-import Run from './../assets/images/run.png'
+import Run from './../assets/images/run.jpg'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { styled } from '@mui/material/styles';
 
@@ -35,7 +35,7 @@ function EditRunOfRunner() {
     //ดึงข้อมูลการวิ่งหนึ่งของนักวิ่งจากฐานข้อมูล
     try {
       const getOnlyData = async () => {
-        const response = await fetch(`http://localhost:3030/run/only/${runId}`, {
+        const response = await fetch(`http://localhost:4444/run/only/${runId}`, {
           method: 'GET',
         })
 
@@ -99,7 +99,7 @@ function EditRunOfRunner() {
     //ส่งข้อมูลไปผ่าน API ที่กำหนดไว้ที่ Back-end
     try{
       //ส่งไปบันทึก
-      const response = await fetch(`http://localhost:3030/run/${runId}`, {
+      const response = await fetch(`http://localhost:4444/run/${runId}`, {
         method: 'PUT',
         body: formData,       
         headers: {
@@ -140,7 +140,7 @@ function EditRunOfRunner() {
               {runnerName}
             </Typography>
             <Avatar alt="Runner"
-              src={runnerImage === '' ? Person : `http://localhost:3030/images/runner/${runnerImage}`}
+              src={runnerImage === '' ? Person : `http://localhost:4444/images/runner/${runnerImage}`}
               sx={{ width: 50, height: 50, ml: 2 }} />
             <Link to="/" style={{ textDecoration: 'none', color: 'green', marginLeft: '10px' }}>
               Logout
@@ -176,7 +176,7 @@ function EditRunOfRunner() {
               sx={{ mx: 'auto', mb: 3, width: 150, height: 150, boxShadow: 2, p: 2 }}
               src={
                 runNewImage == null
-                ? runImage === '' ? Run : `http://localhost:3030/images/run/${runImage}`
+                ? runImage === '' ? Run : `http://localhost:4444/images/run/${runImage}`
                 : URL.createObjectURL(runNewImage)
               } />
 

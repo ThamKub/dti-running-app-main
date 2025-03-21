@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Typography, Avatar, TextField, Button } from '@mui/material';
-import run from './../assets/images/run.png'
+import run from './../assets/images/run.jpg'
 import person from './../assets/images/person.png'
 import { Link } from 'react-router-dom'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -57,7 +57,7 @@ function RegisterRunner() {
     //ส่งข้อมูลไปผ่าน API ที่กำหนดไว้ที่ Back-end
     try{
       //ส่งไปบันทึก
-      const response = await fetch('http://localhost:3030/runner/', {
+      const response = await fetch('http://localhost:4444/runner/', {
         method: 'POST',
         body: formData,        
       })
