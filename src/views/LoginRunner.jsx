@@ -74,11 +74,8 @@ function LoginRunner() {
                 </Link> 
               </Typography>              
             </Typography>
-            <Typography sx={{mt: 4, textAlign: 'center'}}>
-              ยังไม่มีบัญชีผู้ใช้?  
-              <Typography sx={{mt: 4, textAlign: 'center', color: '#011474' }}>
-                  Created By Tham DTI-SAU
-              </Typography>              
+            <Typography sx={{mt: 4, textAlign: 'center', color: '#011474'}}>
+              Created By Tham DTI-SAU  
             </Typography>
           </Box>
         </Box>
