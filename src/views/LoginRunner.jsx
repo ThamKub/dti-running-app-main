@@ -74,8 +74,8 @@ function LoginRunner() {
                 </Link> 
               </Typography>              
             </Typography>
-            <Typography sx={{mt: 4, textAlign: 'center', color: '#011474'}}>
-              Created By Tham DTI-SAU  
+            <Typography sx={{mt: 3, textAlign: 'center', color: '#011474'}}>
+              Created By Tham
             </Typography>
           </Box>
         </Box>
